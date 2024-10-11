@@ -13,6 +13,11 @@ const Main = () => {
     setInput,
   } = useContext(Context);
 
+  const handleCardClick = (suggestion) => {
+    setInput(suggestion);
+    onSent();
+  };
+
   return (
     <div className='main'>
       <div className='nav'>
@@ -29,19 +34,39 @@ const Main = () => {
               <p>How Can I assist you Today</p>
             </div>
             <div className='cards'>
-              <div className='card'>
+              <div
+                onClick={() =>
+                  handleCardClick('Suggest Some New Foods in India')
+                }
+                className='card'
+              >
                 <p>Suggest Some New Foods in India </p>
                 <img src={assets.compass_icon} alt='' />
               </div>
-              <div className='card'>
+              <div
+                onClick={() =>
+                  handleCardClick('Upcoming movies to watch on netflix')
+                }
+                className='card'
+              >
                 <p>Upcoming movies to watch on netflix</p>
                 <img src={assets.bulb_icon} alt='' />
               </div>
-              <div className='card'>
+              <div
+                onClick={() =>
+                  handleCardClick('Suggest Some New Places to trave')
+                }
+                className='card'
+              >
                 <p>Suggest Some New Places to travel</p>
                 <img src={assets.message_icon} alt='' />
               </div>
-              <div className='card'>
+              <div
+                onClick={() =>
+                  handleCardClick('New Team building activity works')
+                }
+                className='card'
+              >
                 <p>New Team building activity works</p>
                 <img src={assets.code_icon} alt='' />
               </div>
